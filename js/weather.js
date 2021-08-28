@@ -1,16 +1,24 @@
-// data load
+
 document.getElementById("search-button").addEventListener("click", function () {
     const userInput = document.getElementById("user-input");
     const userInputValue = userInput.value;
-    const loadData = async () => {
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${userInputValue}&appid=16c7c6f11cef210fbdc28de7a128a70d`
-        const res = await fetch(url)
-        const data = await res.json()
-        displayWeather(data)
-    
+    userInput.value=''
+    if(userInputValue==''){
+       alert("Please Enter Your choose location")
     }
-    loadData()
+    loadData(userInputValue)
+   
 })
+
+// data load
+const loadData = async (location="Dhaka") => {
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=16c7c6f11cef210fbdc28de7a128a70d`
+    const res = await fetch(url)
+    const data = await res.json()
+    displayWeather(data)
+
+}
+loadData()
 
 
 // Display weather
