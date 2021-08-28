@@ -1,3 +1,4 @@
+// data load
 document.getElementById("search-button").addEventListener("click", function () {
     const userInput = document.getElementById("user-input");
     const userInputValue = userInput.value;
@@ -12,7 +13,7 @@ document.getElementById("search-button").addEventListener("click", function () {
 })
 
 
-
+// Display weather
 const displayWeather = (data) => {
     const display = document.getElementById("display-weather");
     display.textContent=''
@@ -24,8 +25,6 @@ const displayWeather = (data) => {
     <h1 class="lead">${data.weather[0].description}</h1>
     `
     display.appendChild(div)
-    console.log(data)
-
 
 
 }
