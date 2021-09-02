@@ -30,18 +30,19 @@ loadData()
 
 // Display weather
 const displayWeather = (data) => {
+
     const display = document.getElementById("display-weather");
     display.textContent = ''
     const div = document.createElement("div");
     div.innerHTML = `
-    <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+    <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
     <h1>${data.name}</h1>
    <h3><span>${Math.round(data.main.temp-273.15)}</span>&deg;C</h3>
     <h1 class="lead">${data.weather[0].description}</h1>
     `
     display.appendChild(div)
 
-    // console.log(data)
+
 
 
 }
